@@ -59,21 +59,21 @@ namespace BranchAndChicken.Api.Controllers
             return Ok(updatedRepoTrainer);
         }
 
-        //[HttpPost]
-        //public IActionResult CreateTrainer(AddTrainerCommand newTrainerCommand)
-        //{
-        //    var newTrainer = new Trainer
-        //    {
-        //      //  Id = Guid.NewGuid(),
-        //        Name = newTrainerCommand.Name,
-        //        YearOfExperience = newTrainerCommand.YearOfExperience,
-        //        Specialty = newTrainerCommand.Specialty,
-        //    };
+        [HttpPost]
+        public IActionResult CreateTrainer(AddTrainerCommand newTrainerCommand)
+        {
+            var newTrainer = new Trainer
+            {
+                //  Id = Guid.NewGuid(),
+                Name = newTrainerCommand.Name,
+                YearOfExperience = newTrainerCommand.YearOfExperience,
+                Specialty = newTrainerCommand.Specialty,
+            };
 
-        //    var repo = new TrainerRepository();
-        //    var trainerThatGotCreated = repo.Add(newTrainer);
-        //    return Created($"api/trainers/{trainerThatGotCreated.Name}", trainerThatGotCreated);
-        //}
+            var repo = new TrainerRepository();
+            var trainerThatGotCreated = repo.Add(newTrainer);
+            return Created($"api/trainers/{trainerThatGotCreated.Name}", trainerThatGotCreated);
+        }
 
     }
 }
